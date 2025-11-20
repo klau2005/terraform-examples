@@ -10,4 +10,4 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Checkov scan
-        uses: bridgecrewio/checkov-action@masterrif
+        uses: bridgecrewio/checkov-action@v12
