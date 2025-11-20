@@ -14,6 +14,7 @@ resource "aws_api_gateway_deployment" "this" {
 
 resource "aws_api_gateway_stage" "this" {
   stage_name    = "${var.stage_name}"
+  xray_tracing_enabled = true
   description   = "${var.comment_prefix}${var.api_domain}"
   rest_api_id   = "${aws_api_gateway_rest_api.this.id}"
   deployment_id = "${aws_api_gateway_deployment.this.id}"
