@@ -6,6 +6,7 @@ resource "aws_key_pair" "this" {
 # Create our default security group to access the instance, over specific protocols
 resource "aws_security_group" "this" {
   vpc_id = "${data.aws_vpc.this.id}"
+  description = "ANMB Security Group"
   tags   = "${merge(var.tags, map("Name", "${var.hostname}"))}"
 }
 
