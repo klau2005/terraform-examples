@@ -3,6 +3,7 @@ resource "google_cloudfunctions_function" "update_historical" {
   runtime = "nodejs10"
   /* Running BQ client has minimal resource requirements */
   max_instances       = 1
+  ingress_settings      = "ALLOW_INTERNAL_ONLY"
   available_memory_mb = 128
   timeout             = 30
   entry_point         = "materialize"
